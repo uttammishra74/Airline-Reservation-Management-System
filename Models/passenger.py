@@ -5,9 +5,6 @@ class Passenger:
         self.phone = phone
         self.password = password
         self.date_joined = date_joined
-        # self. = 
-        # self. = 
-        # self. = 
 
 
     def display(self):
