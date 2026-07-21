@@ -6,16 +6,13 @@ def validate_name(name):
     name = name.strip()
 
     if not name:
-        print("Name Cannot be empty")
-        return
+        return False, "Name cannot be empty"
 
     if len(name) < 2 :
-        print("Name Cannot be Less than 2 digit")
-        return
+        return False, "Name cannot be less than 2 characters"
 
     if not all(char.isalpha() or char.isspace() for char in name):
-        print( "Name should contain only letters and spaces.")
-        return
+        return False, "Name should contain only letters and spaces"
 
     if len(name) > 20:
         return False, "Name cannot exceed 20 characters"
@@ -24,8 +21,6 @@ def validate_name(name):
 
 def validate_email(email):
     email = email.strip()
-    at_index = email.index('@')
-    dot_index = email.rfind('.')
 
     if not email:
         return False, "Email cannot be empty"
@@ -33,6 +28,9 @@ def validate_email(email):
         return False, "Invalid Email(add @)"
     if not '.' in email:
         return False, "Invalid Email(add . )"
+
+    at_index = email.index('@')
+    dot_index = email.rfind('.')
     if email.startswith('@') or email.startswith('.'):
         return False, "Invalid Email"
 
