@@ -28,7 +28,7 @@ CREATE TABLE flights (
     flight_id INT AUTO_INCREMENT PRIMARY KEY,
     flight_number VARCHAR(10) UNIQUE,
     airline_name VARCHAR(50),
-    source_airport INT,
+    source_airport ,VARCHAR(10)
     destination_airport INT,
     departure_time DATETIME,
     arrival_time DATETIME,
