@@ -44,7 +44,7 @@ CREATE TABLE flights (
 CREATE TABLE bookings (
     booking_id INT AUTO_INCREMENT PRIMARY KEY,
     passenger_id INT,
-    flight_id INT,
+    flight_number VARCHAR(10) UNIQUE,
     seat_class ENUM('Economy','Business'),
     seats_booked INT DEFAULT 1,
     total_amount DECIMAL(10,2),
