@@ -112,14 +112,36 @@ def validate_flight_number(flight_number):
 
     return True, "Valid Flight Number"
 
+
+def validate_booking_id(booking_id):
+
+    if not booking_id:
+        return False, "Passenger Id cannot be empty"
+
+    if len(booking_id) != 5:
+        return False, "Passenger Id must be 5 characters"
+    
+    if not booking_id.isdigit():
+            return False, "Passenger Id must only numbers"
+
+    return True, "Valid ID"
+    
+
 def validate_airport_code(airport_code):
-    airport_code = airport_code.strip()
+
+    airport_code = str(airport_code).strip()
 
     if not airport_code.isalpha():
-        return False, "Airport code must be uppercase"
+        return False, "Airport code must contain letters only (no numbers or special characters)"
+
     if len(airport_code) != 3:
-        return False, "Airport code must contain 3 letters"
+        return False, "Airport code must be exactly 3 letters long"
+
+    if not airport_code.isupper():
+        return False, "Airport code must be completely uppercase (e.g., LAX)"
+        
     return True, "Valid Airport Code"
+
 
 
 def validate_price(price):
