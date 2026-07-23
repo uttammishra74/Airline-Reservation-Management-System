@@ -251,7 +251,6 @@ def Update_flight():
             status = "Scheduled"
         
         try:
-            # Added missing commas after fields
             query = """
                 UPDATE flights 
                 SET 
@@ -413,7 +412,7 @@ def flights_menu():
         else:
             print("Invalid choice.")
             
-
+flights_menu()
 
 
 
