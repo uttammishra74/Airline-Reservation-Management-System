@@ -125,6 +125,31 @@ def validate_booking_id(booking_id):
             return False, "Passenger Id must only numbers"
 
     return True, "Valid ID"
+
+def validate_booking_ids(booking_id):
+
+    if not booking_id:
+        return False, "Booking id cannot be empty"
+
+    
+    if not booking_id.isdigit():
+            return False, "Booking id must only numbers"
+
+    return True, "Valid ID"
+
+
+def validate_payment_id(payment_id):
+
+    if not payment_id:
+        return False, "Payment id cannot be empty"
+
+    if len(payment_id) != 5:
+        return False, "Payment id must be 5 characters"
+
+    if not payment_id.isdigit():
+            return False, "Payment id must only numbers"
+
+    return True, "Valid ID"
     
 
 def validate_airport_code(airport_code):
