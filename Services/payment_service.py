@@ -273,7 +273,8 @@ def Payments_menu():
         else:
             print("Invalid choice.")
 
-Payments_menu()
+if __name__ == "__main__":
+    Payments_menu()
 
 
 

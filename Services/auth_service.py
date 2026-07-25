@@ -97,29 +97,70 @@ def login():
     else:
         print("\nInvalid Email or Password")
         return None
+
+
+
+
+def admin_login():
+    username = input("Enter Username : ")
+    password = input("Enter Password : ")
+
+    connection = get_connection()
+    cursor = connection.cursor(dictionary=True)
+
+    try:
+        query = """
+        SELECT *
+        FROM admins
+        WHERE username = %s
+        AND password = %s
+        """
+
+        cursor.execute(query, (username, password))
+        user = cursor.fetchone()
+    finally:
+        cursor.close()
+        connection.close()
+
+    if user:
+        print(f"\nWelcome {user['username']}!")
+        return user
+
+    else:
+        print("\nInvalid Username or Password")
+        return None
     
 
 def auth_menu():
     while True:
-        print("\n1. Register")
-        print("2. Login")
-        print("3. Exit")
+        print("\n===== Airline Reservation Management System =====")
+        print("1. Register")
+        print("2. Passenger Login")
+        print("3. Admin Login")
+        print("4. Exit")
 
-        choice = input("Choose: ")
-
+        choice = input("Choose: ").strip()
         valid, message = validate_menu_choice(choice)
-        if not valid:
-            print(message)
-            return
+        if not valid or choice not in {"1", "2", "3", "4"}:
+            print(message if not valid else "Invalid Choice")
+            continue
 
         if choice == "1":
             register()
         elif choice == "2":
-            login()
-        elif choice == "3":
-            break
-        else:
-            print("Invalid choice.")
+            user = login()
+            if user:
+                from Menus.passenger_menu import passenger_dashboard
 
-if __name__ == "__main__":
-    auth_menu()
+                passenger_dashboard()
+        elif choice == "3":
+            user = admin_login()
+            if user:
+                from Menus.admin_menu import admin_dashboard
+
+                admin_dashboard()
+        else:
+            print("\nThank you for using our Airline Reservation System. Goodbye!")
+            break
+
+

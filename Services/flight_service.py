@@ -381,38 +381,38 @@ def View_flights():
 
 
 
-def flights_menu():
-    while True:
-        print("\n1. Add Flight")
-        print("2. Delete Flight")
-        print("3. Update Flight")
-        print("4. Search Flight")
-        print("5. View Flight")
-        print("6. Exit")
+# def flights_menu():
+#     while True:
+#         print("\n1. Add Flight")
+#         print("2. Delete Flight")
+#         print("3. Update Flight")
+#         print("4. Search Flight")
+#         print("5. View Flight")
+#         print("6. Exit")
 
-        choice = input("Choose: ")
+#         choice = input("Choose: ")
 
-        valid, message = validate_menu_choice(choice)
-        if not valid:
-            print(message)
-            return
+#         valid, message = validate_menu_choice(choice)
+#         if not valid:
+#             print(message)
+#             return
 
-        if choice == "1":
-            Add_flight()
-        elif choice == "2":
-            Delete_flight()
-        elif choice == "3":
-            Update_flight()
-        elif choice == "4":
-            Search_flights()
-        elif choice == "5":
-            View_flights()
-        elif choice == "6":
-            break
-        else:
-            print("Invalid choice.")
+#         if choice == "1":
+#             Add_flight()
+#         elif choice == "2":
+#             Delete_flight()
+#         elif choice == "3":
+#             Update_flight()
+#         elif choice == "4":
+#             Search_flights()
+#         elif choice == "5":
+#             View_flights()
+#         elif choice == "6":
+#             break
+#         else:
+#             print("Invalid choice.")
             
-flights_menu()
+# flights_menu()
 
 
 
