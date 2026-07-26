@@ -219,8 +219,3 @@ def validate_menu_choice(menu_choice):
     return True, "Valid Choice"
     
 
-def validate_yes_no(yes_no):
-    if yes_no in ("y","yes","n","no"):
-        return True,"Valid Choice"
-
-    return False,"Enter Yes/No"
