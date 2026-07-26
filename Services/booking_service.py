@@ -9,7 +9,6 @@ if str(PROJECT_ROOT) not in sys.path:
 from Database.connection import get_connection
 from Utils.validators import (
     validate_booking_id,
-    validate_menu_choice
 )
 
 
@@ -180,30 +179,3 @@ def Booking_history():
         cursor.close()  
         connection.close()
 
-# def Booking_menu():
-#     while True:
-#         print("\n1. Booking Seat")
-#         print("2. Cancel Booking")
-#         print("3. Booking History")
-#         print("4. Exit")
-
-
-#         choice = input("Choose: ")
-
-#         valid, message = validate_menu_choice(choice)
-#         if not valid:
-#             print(message)
-#             return
-
-#         if choice == "1":
-#             Book_seat()
-#         elif choice == "2":
-#             Cancel_booking()
-#         elif choice == "3":
-#             Booking_history()
-#         elif choice == "4":
-#             break
-#         else:
-#             print("Invalid choice.")
-
-# Booking_menu()
