@@ -3,5 +3,6 @@
   "code-runner.runInTerminal": true,
   "code-runner.executorMap": {
     "python": "cd $dir; & .\\.venv\\Scripts\\python.exe -u $fileName"
-  }
+  },
+  "editor.wordWrap": "on"
 }
