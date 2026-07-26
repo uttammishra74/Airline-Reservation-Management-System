@@ -9,11 +9,9 @@ from datetime import date
 from Database.connection import get_connection
 from Utils.validators import (
     validate_flight_number,
-    validate_date,
     validate_price,
     validate_seats,
     validate_time,
-    validate_menu_choice,
     validate_airport_code
 )
 
