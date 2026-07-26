@@ -42,7 +42,6 @@ This project follows a modular approach, making it easy to maintain, extend, and
 ## 🛠️ Admin Module
 
 * Admin login
-* Add airports
 * Add airlines
 * Add flights
 * Update flight schedules
@@ -98,7 +97,6 @@ Airline-Reservation-System/
 │
 ├── utils/
 │   ├── validation.py
-│   ├── helpers.py
 │   └── menu.py
 │
 ├── screenshots/
